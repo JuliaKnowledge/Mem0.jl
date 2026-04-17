@@ -7,7 +7,7 @@ OpenAI embedding provider using the Embeddings API.
 """
 Base.@kwdef mutable struct OpenAIEmbedding <: AbstractEmbedder
     model::String = "text-embedding-3-small"
-    api_key::String = get(ENV, "OPENAI_API_KEY", "")
+    api_key::Any = get(ENV, "OPENAI_API_KEY", "")
     base_url::String = get(ENV, "OPENAI_API_BASE", "https://api.openai.com/v1")
     embedding_dims::Int = 1536
 end
@@ -36,7 +36,7 @@ function embed(emb::OpenAIEmbedding, text::AbstractString; memory_action=nothing
 
     resp = HTTP.post(url,
         Dict(
-            "Authorization" => "Bearer $(emb.api_key)",
+            "Authorization" => "Bearer $(_resolve_bearer(emb.api_key))",
             "Content-Type" => "application/json",
         ),
         JSON3.write(body);

@@ -7,7 +7,7 @@ OpenAI-compatible LLM provider using the Chat Completions API.
 """
 Base.@kwdef mutable struct OpenAILLM <: AbstractLLM
     model::String = "gpt-4.1-nano-2025-04-14"
-    api_key::String = get(ENV, "OPENAI_API_KEY", "")
+    api_key::Any = get(ENV, "OPENAI_API_KEY", "")
     base_url::String = get(ENV, "OPENAI_API_BASE", "https://api.openai.com/v1")
     temperature::Float64 = 0.1
     max_tokens::Int = 2000
@@ -27,7 +27,7 @@ end
 
 function _openai_headers(llm::OpenAILLM)
     return Dict(
-        "Authorization" => "Bearer $(llm.api_key)",
+        "Authorization" => "Bearer $(_resolve_bearer(llm.api_key))",
         "Content-Type" => "application/json",
     )
 end

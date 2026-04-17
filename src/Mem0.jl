@@ -39,6 +39,7 @@ include("exceptions.jl")
 include("types.jl")
 include("prompts.jl")
 include("utils.jl")
+include("auth.jl")
 include("storage.jl")
 
 # Provider abstractions
