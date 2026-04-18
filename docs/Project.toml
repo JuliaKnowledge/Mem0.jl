@@ -3,9 +3,6 @@ AzureIdentity = "1b7b9afa-6387-4f08-b495-223719ee650f"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 Mem0 = "111c52c1-a189-4018-bb23-b883ef531b41"
 
-[sources]
-AzureIdentity = {url = "https://github.com/JuliaKnowledge/AzureIdentity.jl"}
-Mem0 = {path = ".."}
-
 [compat]
 Documenter = "1"
+julia = "1.10"
