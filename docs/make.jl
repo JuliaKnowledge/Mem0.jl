@@ -8,7 +8,7 @@ makedocs(
     checkdocs = :exports,
     format = Documenter.HTML(
         prettyurls = get(ENV, "CI", nothing) == "true",
-        canonical = "https://sdwfrost.github.io/Mem0.jl",
+        canonical = "https://juliaknowledge.github.io/Mem0.jl",
         assets = String[],
     ),
     pages = [
@@ -30,6 +30,7 @@ makedocs(
 )
 
 deploydocs(
-    repo = "github.com/sdwfrost/Mem0.jl.git",
+    repo = "github.com/JuliaKnowledge/Mem0.jl.git",
+    devbranch = "main",
     push_preview = true,
 )
