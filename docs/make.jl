@@ -5,6 +5,7 @@ makedocs(
     sitename = "Mem0.jl",
     modules = [Mem0],
     remotes = nothing,
+    checkdocs = :exports,
     format = Documenter.HTML(
         prettyurls = get(ENV, "CI", nothing) == "true",
         canonical = "https://sdwfrost.github.io/Mem0.jl",

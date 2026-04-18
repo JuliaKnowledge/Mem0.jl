@@ -105,7 +105,7 @@ The LLM will extract facts like:
 
 ### Step 3: Search Memories
 
-Use [`search`](@ref) to find relevant memories by semantic similarity:
+Use [`Mem0.search`](@ref) to find relevant memories by semantic similarity:
 
 ```julia
 results = search(mem, "What does Alice do for work?"; user_id="alice")

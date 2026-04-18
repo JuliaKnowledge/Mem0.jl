@@ -25,10 +25,13 @@ Mem0.ChatMessage
 
 ```@docs
 Mem0.MemoryType
-Mem0.SEMANTIC_MEMORY
-Mem0.EPISODIC_MEMORY
-Mem0.PROCEDURAL_MEMORY
 ```
+
+The `MemoryType` enum has three values:
+
+- `SEMANTIC_MEMORY` — facts and concepts
+- `EPISODIC_MEMORY` — events and experiences
+- `PROCEDURAL_MEMORY` — skills and procedures
 
 ## Internal Data Types
 

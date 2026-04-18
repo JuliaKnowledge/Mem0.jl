@@ -64,3 +64,9 @@ all_memories = get_all(mem; user_id="alice")
 - [Types](@ref types_api) — configuration structs, data types, and enums
 - [Providers](@ref providers_api) — abstract interfaces and concrete provider implementations
 - [Utilities](@ref utilities_api) — helper functions for parsing, hashing, filtering, and more
+
+## Module reference
+
+```@docs
+Mem0
+```

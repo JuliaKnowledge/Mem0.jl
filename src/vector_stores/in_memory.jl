@@ -110,6 +110,12 @@ function Base.get(store::InMemoryVectorStore, vector_id::String)::Union{Nothing,
     return get(store.records, vector_id, nothing)
 end
 
+"""
+    list_records(store::InMemoryVectorStore; filters=nothing, limit=nothing)
+
+List records in an `InMemoryVectorStore`, optionally filtered by metadata
+and capped at `limit` entries.
+"""
 function list_records(store::InMemoryVectorStore;
                       filters::Union{Nothing, Dict}=nothing,
                       limit::Union{Nothing, Int}=nothing)

@@ -29,7 +29,7 @@ When graph memory is enabled, every call to [`add`](@ref) performs two parallel 
                alice ──loves────► julia
 ```
 
-Similarly, [`search`](@ref) queries both the vector store and graph store, returning results in `"results"` and `"relations"` keys respectively.
+Similarly, [`Mem0.search`](@ref) queries both the vector store and graph store, returning results in `"results"` and `"relations"` keys respectively.
 
 ## Entity and Relationship Extraction
 
@@ -140,7 +140,7 @@ If `graph_store.llm` is `nothing`, the main `MemoryConfig.llm` is used instead.
 
 ## Combined Vector + Graph Search
 
-When graph memory is enabled, [`search`](@ref) automatically queries both stores:
+When graph memory is enabled, [`Mem0.search`](@ref) automatically queries both stores:
 
 ```julia
 results = search(mem, "What does Alice do?"; user_id="alice")
